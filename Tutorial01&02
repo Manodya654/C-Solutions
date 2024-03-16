@@ -1,0 +1,281 @@
+//1.	Display your name and school name in two separate lines
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    printf("My name is: Manodya\n");
+    printf("School name: NSBM Green University\n");
+    return 0;
+}
+
+//2.	Display the following output using printf() statements
+*
+**
+***
+****
+*****
+
+#include <stdio.h>
+int main()
+{
+    printf("*\n");
+    printf("**\n");
+    printf("***\n");
+    printf("****\n");
+    printf("*****\n");
+    return 0;
+}
+
+
+//3.	Input values for int,float,double and char data types and display the value of each of the variable.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int intVal;
+    float floatVal;
+    double doubleVal;
+    char charVal;
+    printf("Enter an integer value: ");
+    scanf("%d", &intVal);
+    printf("Enter a float value: ");
+    scanf("%f", &floatVal);
+    printf("Enter a double value: ");
+    scanf("%lf", &doubleVal);
+    printf("Enter a character: ");
+    scanf(" %c", &charVal);
+    printf("\nValues entered:\n");
+    printf("Integer: %d\n", intVal);
+    printf("Float: %f\n", floatVal);
+    printf("Double: %lf\n", doubleVal);
+    printf("Character: %c\n", charVal);
+    return 0;
+}
+
+//4.	Input two integers and display the total
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int a, b, tot;
+    printf("Enter 2 integer values ");
+    scanf("%d %d", &a, &b);
+    tot= a+b;
+    printf("the total is %d\n", tot);
+    return 0;
+}
+
+//5.	Input two numbers with decimals(fractions) and display the average with decimals
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    double num1, num2, avg;
+    printf("Enter the first number: ");
+    scanf("%lf", &num1);
+    printf("Enter the second number: ");
+    scanf("%lf", &num2);
+    avg = (num1 + num2) / 2;
+    printf("The average is: %.2lf\n", avg);
+    return 0;
+}
+
+//6.	Input a student name, birth year and display student name with age.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char name[50];
+    int bYear, age;
+    printf("Enter the student name: ");
+    scanf("%s", name);
+    printf("Enter the student's birth year: ");
+    scanf("%d", &bYear);
+    // Calculate the age
+    age = 2023 - bYear;
+    printf("Your name is %s \n", name);
+    printf("Your age is %d\n", age);
+
+    return 0;
+}
+
+
+//7.	Input two numbers, swap the values and display the output. ( Before swap and after swap)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int num1, num2, val;
+
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+    printf("Before swap:\n");
+    printf("First number is %d\n", num1);
+    printf("Second number is %d\n", num2);
+
+    val = num1;
+    num1 = num2;
+    num2 = val;
+
+    printf("After swap:\n");
+    printf("First number is %d\n", num1);
+    printf("Second number is %d\n", num2);
+
+    return 0;
+}
+
+//8.	Execute the following code and analyze the output. Study the output format.
+
+#include<stdio.h>
+main()
+{
+	printf("The color: %s\n", "blue");
+	printf("First number: %d\n", 12345);
+	printf("Second number: %04d\n", 25);
+	printf("Third number: %i\n", 1234);
+	printf("Float number: %3.2f\n", 3.14159);
+	printf("Hexadecimal: %x\n", 255);
+	printf("Octal: %o\n", 255);
+	printf("Unsigned value: %u\n", 150);
+	printf("Just print the percentage sign %%\n", 10);
+}
+
+•	printf("The color: %s\n", "blue");  - The %s is used to print a string. So, the string "blue" is printed.
+•	printf("First number: %d\n", 12345); - %d is used to print an integer. So, the number 12345 is printed.
+•	printf("Second number: %04d\n", 25); - %04d is used to print an integer with 4 digits. But, the number 25 has only 2 digits and it is printed by adding 2 zeros to the starting. So the output is 0025.
+•	printf("Third number: %i\n", 1234); - The %i is used to print an integer. So, the number 1234 is printed.
+•	printf("Float number: %3.2f\n", 3.14159); - %3.2f  is used to print a float number with minimum 3 characters including the decimal points. So, the number 3.14159 is printed with two digits after the decimal point and the output is 3.14.
+•	printf("Hexadecimal: %x\n", 255); - %x is used to print an integer as a hexadecimal. So, the decimal value 255 is printed to its hexadecimal value ff.
+•	printf("Octal: %o\n", 255); - %o is used to print an integer as a octal. So, the decimal value 255 is printed as its octal value 377.
+•	printf("Unsigned value: %u\n", 150); - %u is used to print an unsigned integer. So, the number 150 is printed.
+•	printf("Just print the percentage sign %%\n", 10); - %% is used to print an exact percentage sign. So, the % is printed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Practical Number	02
+
+/*Question 1
+Have the computer print
+
+HI, HOW OLD ARE YOU?
+
+on one line. The user then enters his or her age immediately after the question mark. The computer then skips two lines and prints on two consecutive lines.
+
+WELCOME (age)
+LET’S BE FRIENDS!
+Write a complete C program to do the above.*/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main() {
+
+    int age;
+    printf("HI, HOW OLD ARE YOU? ");
+    scanf("%d", &age);
+    printf("\n\n WELCOME %d \n", age);
+    printf("LET’S BE FRIENDS!\n");
+
+    return 0;
+}
+
+
+/*2. Write a program which uses the format commands with modifiers to print the following output:
+
+Remark:
+Observe how format commands are used in the following program.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	printf("%5d%5d%5d\n", 2, 4, 8);
+	printf("%5d%5d%5d\n", 3, 9, 27);
+	printf("%5d%5d%5d\n", 4, 16, 64);
+	return 0;
+}
+
+
+
+// 3. Write a simple program to evaluate the average speed of a car traveled in meters per second (ms-1).  Given that Try using integer variables. What would be the problem? Why?  How to fix the problem?
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int dis, time, avgSpeed;
+    printf("Enter the Distance traveled in meters: ");
+    scanf("%d", &dis);
+    printf("Enter the time taken in seconds: ");
+    scanf("%d", &time);
+    avgSpeed = dis/time;
+    printf("Average speed is %d meters per second \n", avgSpeed);
+    return 0;
+}
+
+Encounter a problem with the correctness of the outcome. Integer variables store whole numbers without decimal places but float variables can store numbers with decimal places. It means, the integer is divided by a integer the result also a integer value. So used float variables instead of integer value for avgSpeed.  To display the average speed, use the %.2f and added float data type to Infront of  (dis / time) to display the avgSpeed variable with two decimal points. 
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main() {
+    int dis, time;
+    float avgSpeed;
+
+    printf("Enter the distance travelled (in meters): ");
+    scanf("%d", &dis);
+    printf("Enter the time taken (in seconds): ");
+    scanf("%d", &time);
+    avgSpeed = (float) dis / time;
+    printf("Average speed: %.2f meters per second \n", avgSpeed);
+
+    return 0;
+}
+
+
+
+
+
+
+/*4. Convert a temperature reading in degrees Fahrenheit to degrees Celsius, using the formula
+
+C = ( 5 / 9 ) x ( F – 32 )
+
+Test the program with the following values: 68, 150, 212, 0, -22, -200 (degree Fahrenheit).*/
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    float tempInF, tempInC;
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%f", &tempInF);
+    tempInC = (5.0 / 9.0) * (tempInF - 32.0);
+    printf("Temperature is %3lf Celsius \n", tempInC);
+    return 0;
+}
+Answers - 
+20.000000, 65.555557, 100.000000, -17.777779, -30.000000, -128.888885 (degrees Celsius)
