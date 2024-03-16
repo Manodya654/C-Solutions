@@ -1,0 +1,789 @@
+//Practical 03
+
+
+//1.	
+#include <stdio.h>
+int main() {
+    int no1, no2;
+    printf("Enter 2 numbers ");
+    scanf("%d %d", &no1, &no2);
+
+    if(no1>no2)
+        printf("The highest number is %d", no1);
+    else
+        printf("The highest number is %d", no2);
+}
+
+
+
+//2.	
+#include <stdio.h>
+       int main() {
+    int no1, no2, no3, min, max;
+    printf("Enter 3 numbers ");
+    scanf("%d %d %d", &no1, &no2, &no3);
+
+    if(no1>no2 && no1>no3)
+        printf("The highest number is %d", no1);
+    else if(no2>no3 && no2>no1)
+        printf("The highest number is %d", no2);
+    else
+        printf("The highest number is %d", no3);
+}
+
+
+//3.	 
+#include <stdio.h>
+ int main() {
+    char employeeName[20];
+    float newSalary, basicSalary;
+
+    printf("Enter Employee Name ");
+    scanf("%s", &employeeName);
+    printf("Enter Your Basic Salary  ");
+    scanf("%f", &basicSalary);
+
+    if (basicSalary <5000){
+        newSalary = basicSalary*1.05;
+        printf("Employee %s New Salary is %.2f\n", employeeName, newSalary);
+    }
+
+    if(basicSalary >=5000 && basicSalary<10000) {
+        newSalary = basicSalary*1.1;
+        printf("Employee %s New Salary is %.2f\n", employeeName, newSalary);
+    }
+
+    if(basicSalary >=10000) {
+        newSalary = basicSalary*1.15;
+        printf("Employee %s New Salary is %.2f\n", employeeName, newSalary);
+    }
+}
+
+
+//4.	
+#include <stdio.h>
+int main() {
+    float radius, diameter, circumference, area;
+    printf("Enter radius of the circle ");
+    scanf("%f", &radius);
+    diameter=2*radius;
+    circumference=2*3.14159*radius;
+    area=3.14159*radius*radius;
+
+    printf("Diameter of the Circle is %f\n", diameter);
+    printf("Circumference of the Circle is %f\n", circumference);
+    printf("Area of the Circle is %f\n", area);
+}
+
+
+//5.	  
+#include <stdio.h>
+  int main() {
+  int no1, no2;
+  printf("Enter the first integer ");
+  scanf("%d", &no1);
+         printf("Enter the second integer ");
+  scanf("%d", &no2);
+
+    if (no1 % no2 == 0) {
+        printf("%d is a multiple of %d\n", no1, no2);
+    } else {
+        printf("%d is not a multiple of %d\n", no1, no2);
+    }
+}
+
+
+//6.	
+#include <stdio.h>
+int main() {
+    printf("Integer equivalents\n");
+
+    printf("Uppercase letters\n");
+    printf("A %d\n", 'A');
+    printf("B %d\n", 'B');
+    printf("C %d\n", 'C');
+
+    printf("Lowercase letters\n");
+    printf("a %d\n", 'a');
+    printf("b %d\n", 'b');
+    printf("c %d\n", 'c');
+
+    printf("Digits:\n");
+    printf("0 %d\n", '0');
+    printf("1 %d\n", '1');
+    printf("2 %d\n", '2');
+
+    printf("Special symbols\n");
+    printf("$ %d\n", '$');
+    printf("* %d\n", '*');
+    printf("+ %d\n", '+');
+    printf("/ %d\n", '/');
+
+    printf("Blank character %d\n", ' ');
+
+}
+
+
+//7.	
+#include <stdio.h>
+int main() {
+    float basicSalary, additionalAllowance = 0, monthlySales, bonusPercentage, bonusAmount, grossRemuneration;
+    char city;
+    printf("Enter the basic salary of the Salesmen  ");
+    scanf("%f", &basicSalary);
+
+    printf("Enter the number of years of service of the Salesmen  ");
+    int serviceYears;
+    scanf("%d", &serviceYears);
+
+    printf("Enter the city 'C' for Colombo, 'N' for other cities ");
+    scanf(" %c", &city);
+
+    printf("Enter the monthly sales amount of the Salesmen  ");
+    scanf("%f", &monthlySales);
+
+    if (serviceYears > 5) {
+        additionalAllowance = 0.1 * basicSalary;
+    }
+    if (city == 'C') {
+        additionalAllowance += 2500;
+    }
+    if (monthlySales >= 0 && monthlySales <= 25000) {
+        bonusPercentage = 0.1;
+    } else if (monthlySales > 25000 && monthlySales <= 50000) {
+        bonusPercentage = 0.12;
+    } else if (monthlySales > 50000) {
+        bonusPercentage = 0.15;
+    }
+
+    bonusAmount = bonusPercentage * monthlySales;
+
+    grossRemuneration = basicSalary + additionalAllowance + bonusAmount;
+
+    printf("Gross monthly remuneration is %.2f\n", grossRemuneration);
+}
+
+
+
+
+
+
+//Practical 04
+
+//1.	    
+#include <stdio.h>
+int main() {
+    int no;
+    printf("Enter the number ");
+    scanf("%d", &no);
+
+    if(no%2)
+        printf("The number is a odd number", no);
+    else
+        printf("The number is a even number", no);
+}
+
+
+#include <stdio.h>
+int main() {
+
+    int no;
+    printf("Enter the number ");
+    scanf("%d", &no);
+
+    switch(no%2){
+        case 0: printf("The number is an even number", no); break;
+        case 1: printf("The number is an odd number", no); break;
+    }
+}
+
+
+//2.	    
+#include <stdio.h>
+int main() {
+    int choice;
+    float no1, no2, result;
+    printf("Menu Driven Calculator\n");
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Division\n");
+    printf("4. Multiplication\n\n");
+    printf("Enter your choice (1-4): ");
+    scanf("%d", &choice);
+    printf("\nEnter two numbers: ");
+    scanf("%f %f", &no1, &no2);
+
+    switch (choice) {
+        case 1:
+            result = no1 + no2;
+            printf("Result: %.2f\n", result);
+            break;
+        case 2:
+            result = no1 - no2;
+            printf("Result: %.2f\n", result);
+            break;
+        case 3:
+            if (no2 != 0) {
+                result = no1 / no2;
+                printf("Result: %.2f\n", result);
+            } else {
+                printf("Error: Division by zero\n");
+            }
+            break;
+        case 4:
+            result = no1 * no2;
+            printf("Result: %.2f\n", result);
+            break;
+        default:
+            printf("Invalid choice\n");
+            break;
+    }
+}
+
+
+
+//3.	    
+#include <stdio.h>
+int main() {
+    int choice;
+    float radius, result;
+    printf("Menu Driven Calculator\n");
+    printf("1. Calculate the circumference of a circle\n");
+    printf("2. Calculate the area of a circle\n");
+    printf("3. Calculate the volume of a sphere\n");
+    printf("Enter your choice (1-3): ");
+    scanf("%d", &choice);
+
+    printf("\n Enter the radius ");
+    scanf("%f", &radius);
+
+    switch (choice) {
+        case 1:
+            result = 2 * 3.14159* radius;
+            printf("Circumference of the circle is %.2f\n", result);
+            break;
+        case 2:
+            result = 3.14159 * pow(radius, 2);
+            printf("Area of the circle is %.2f\n", result);
+            break;
+        case 3:
+            result = (4 * 3.14159 * pow(radius, 3)) / 3;
+            printf("Volume of the sphere is %.2f\n", result);
+            break;
+        default:
+            printf("Invalid choice\n");
+            break;
+    }
+}
+
+
+
+//4.	    
+#include <stdio.h>
+int main() {
+    char letter;
+    printf("Enter a letter: ");
+    scanf(" %c", &letter);
+
+    switch (letter) {
+        case 'a':
+        case 'A':
+        case 'e':
+        case 'E':
+        case 'i':
+        case 'I':
+        case 'o':
+        case 'O':
+        case 'u':
+        case 'U':
+            printf("%c is a vowel\n", letter);
+            break;
+        default:
+            printf("%c is not a vowel\n", letter);
+            break;
+    }
+}
+
+
+//5.     
+#include <stdio.h>
+int main() {
+    int month;
+    printf("Enter the month number: ");
+    scanf("%d", &month);
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 10:
+        case 12:
+            printf("This month has 31 days.\n");
+            break;
+        case 2:
+            printf("This month has 28 days.\n");
+            break;
+        case 4:
+        case 9:
+        case 11:
+            printf("This month has 30 days.\n");
+            break;
+        default:
+            printf("Invalid month number entered.\n");
+            break;
+    }
+}
+
+
+
+
+
+
+//Practical 05
+
+//1.	
+#include <stdio.h>
+int main() {
+    int i;
+    // Using while loop
+    i = 0;
+    while (i <= 100) {
+        printf("%d ", i);
+        i++;
+    }
+    printf("\n");
+}
+
+#include <stdio.h>
+int main() {
+    int i;
+    // Using do-while loop
+    i = 0;
+    do {
+        printf("%d ", i);
+        i++;
+    } while (i <= 100);
+    printf("\n");
+}
+
+
+#include <stdio.h>
+int main() {
+    int i;
+    // Using for loop
+    for (i = 0; i <= 100; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+}
+
+
+
+//2.	 
+#include <stdio.h>
+int main() {
+    int marks[10];
+    int i, total = 0;
+
+    printf("Enter 10 marks\n");
+    while (i < 10) {
+        printf("Mark %d: ", i + 1);
+        scanf("%d", &marks[i]);
+        total += marks[i];
+        i++;
+    }
+    float average = (float)total /10;
+    printf("Total marks %d\n", total);
+    printf("Average marks %.2f\n", average);
+    if (average < 50) {
+        printf("Fail!\n");
+    } else {
+        printf("Pass!\n");
+    }
+}
+
+
+
+//3.	 
+#include <stdio.h>
+int main() {
+    int num;
+    long factorial = 1;
+
+    printf("Enter a number ");
+    scanf("%d", &num);
+
+    for (int i = 1; i <= num; ++i) {
+        factorial *= i;
+    }
+
+    printf("Factorial of %d is %llu.\n", num, factorial);
+
+}
+
+
+//4.	 
+#include <stdio.h>
+ int main() {
+    int number, digit, sum = 0;
+
+    printf("Enter a number ");
+    scanf("%d", &number);
+
+    while (number != 0) {
+        digit = number % 10;
+        sum += digit;
+        number /= 10;
+    }
+
+    printf("Sum of all digits is %d\n", sum);
+
+}
+
+
+
+//5.	   
+#include <stdio.h>
+int main() {
+    int no, rev = 0, digit=0;
+
+    printf("Enter a number ");
+    scanf("%d", &no);
+
+    do {
+        digit = no % 10;
+        rev= rev* 10 + digit;
+        no = no / 10;
+    } while (no > 0);
+
+    printf("Reversed number %d\n", rev);
+
+}
+
+
+
+//6.	  
+#include <stdio.h>
+int main() {
+    int base, exponent ;
+    int result = 1;
+
+    printf("Enter the base ");
+    scanf("%d", &base);
+
+    printf("Enter the exponent ");
+    scanf("%d", &exponent);
+
+    for (int i = 1; i <= exponent; i++) {
+        result *= base;
+    }
+    printf("%d to the power %d is %d\n", base, exponent, result);
+}
+
+
+//7.	 
+#include <stdio.h>
+  int main() {
+    int no1 = 0, no2 = 1, nextNo, i;
+    printf("%d\n", no1);
+    for (i = 1; i < 10; i++) {
+        printf("%d\n", no2);
+        nextNo = no1 + no2;
+        no1 = no2;
+        no2 = nextNo;
+    }
+}
+
+
+
+//8.	 
+#include <stdio.h>
+int main() {
+    int no, originalNo, remainder, result = 0, n = 0;
+    printf("Enter a number ");
+    scanf("%d", &no);
+    originalNo = no;
+
+    while (originalNo != 0) {
+        originalNo /= 10;
+        ++n;
+    }
+    originalNo =  no;
+    while (originalNo != 0) {
+        remainder = originalNo % 10;
+        result += pow(remainder, n);
+        originalNo /= 10;
+    }
+    if (result ==  no) {
+        printf("%d is an Armstrong number\n", no);
+    } else {
+        printf("%d is not an Armstrong number\n", no);
+    }
+}
+
+
+
+//9.	     
+#include <stdio.h>
+ int main() {
+    char letter;
+
+    for (letter = 'A'; letter <= 'Z'; letter++) {
+        printf("%c %d\n", letter, letter);
+    }
+}
+
+
+//10.    
+#include <stdio.h>
+int main()
+{
+    printf("*\n");
+    printf("**\n");
+    printf("***\n");
+    printf("****\n");
+    printf("*****\n");
+}
+
+
+//11.    
+#include <stdio.h>
+int main() {
+    int no, i, isPrime = 1;
+    printf("Enter a number ");
+    scanf("%d", &no);
+
+    if (no <= 1) {
+        isPrime = 0;
+    } else {
+        for (i = 2; i <= no / 2; i++) {
+            if (no % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+    }
+    if (isPrime) {
+        printf("%d is a prime number\n", no);
+    } else {
+        printf("%d is not a prime number\n", no);
+    }
+}
+
+
+//12. 	
+#include <stdio.h>
+int main() {
+    int no, i;
+
+    printf("Enter an integer ");
+    scanf("%d", &no);
+
+    printf("Factors of %d are ", no);
+
+    for (i = 1; i <= no; i++) {
+        if (no % i == 0) {
+            printf("%d ", i);
+        }
+    }
+}
+
+//13.    
+#include <stdio.h>
+int main() {
+    int number, sum = 0;
+    printf("Enter numbers to add (enter -1 to stop)\n");
+   
+ while (1) {
+        printf("Enter a number ");
+        scanf("%d", &number);
+        if (number == -1) {
+            break; 
+        }
+        sum += number;
+    }
+    printf("Sum of the entered numbers %d\n", sum);
+}
+
+
+//14. 
+#include <stdio.h>
+      int main() {
+    int arr[10];
+    int i;
+    printf("Enter 10 integers\n");
+
+    for (i = 0; i < 10; i++) {
+        printf("Enter integer %d ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    printf("The entered array is ");
+
+    for (i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
+    }
+}
+
+
+#include <stdio.h>
+
+int main() {
+    int arr[10];
+    int i, count = 0;
+    printf("Enter 10 integers\n");
+
+    for (i = 0; i < 10; i++) {
+        printf("Enter integer %d ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 0; i < 10; i++) {
+        if (arr[i] % 2 == 0) {
+            count++;
+        }
+    }
+    printf("The count of even numbers in the array is %d\n", count);
+}
+
+
+//Section B
+
+//1.	
+#include <stdio.h>
+int main() {
+int no[10];
+int positives = 0;
+int negatives = 0;
+int zeros = 0;
+printf("Enter 10 numbers\n");
+for (int i = 0; i < 10; i++) {
+scanf("%d", &no[i]);
+
+if (no[i] > 0)
+positives++;
+else if (no[i] < 0)
+negatives++;
+else
+zeros++;
+}
+printf("Number of positive numbers %d\n", positives);
+printf("Number of negative numbers %d\n", negatives);
+printf("Number of zeros %d\n", zeros);
+}
+
+
+
+
+//2.	
+#include <stdio.h>
+int main() {
+    int marks[10];
+    int max, min, sum = 0;
+    float average;
+    printf("Enter the marks of 10 students\n");
+
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &marks[i]);
+        if (i == 0) {
+            max = marks[0];
+            min = marks[0];
+        } else {
+            if (marks[i] > max)
+                max = marks[i];
+            if (marks[i] < min)
+                min = marks[i];
+        }
+        sum += marks[i];
+    }
+    average = (float)sum / 10;
+    printf("Maximum Marks %d\n", max);
+    printf("Minimum Marks %d\n", min);
+    printf("Average Marks %.2f\n", average);
+
+}
+
+// 3.	
+#include <stdio.h>
+int main() {
+    float prices[10];
+    float sum = 0;
+    float average;
+    int noGreaterThan200 = 0;
+    printf("Enter the prices of 10 items\n");
+
+    for (int i = 0; i < 10; i++) {
+        scanf("%f", &prices[i]);
+        sum += prices[i];
+        if (prices[i] > 200)
+            noGreaterThan200++;
+    }
+    average= sum / 10;
+    printf("Average price of an item is %.2f\n", average);
+    printf("Number of items with price greater than 200 is %d\n", noGreaterThan200);
+}
+
+
+
+//4.	 
+#include <stdio.h>
+ int main() {
+    int employeeNo, count = 0;
+    float basicSalary;
+
+    printf("Enter employee number (-999 to exit) ");
+    scanf("%d", &employeeNo);
+
+    while (employeeNo != -999) {
+        printf("Enter basic salary for employee number %d ", employeeNo);
+        scanf("%f", &basicSalary);
+        if (basicSalary >= 5000) {
+            count++;
+        }
+        printf("Enter employee number (-999 to exit) ");
+        scanf("%d", &employeeNo);
+    }
+    printf("Number of employees with a basic salary >= 5000 is %d\n", count);
+}
+
+
+
+//5.	
+#include <stdio.h>
+int main() {
+    int employeeNo;
+    float hoursWorked;
+    float overtimePayment;
+    int countExceeding4000 = 0;
+    int totalEmployees = 0;
+
+    printf("Enter employee number (or -999 to end the program)\n");
+    scanf("%d", &employeeNo);
+
+    while (employeeNo != -999) {
+        printf("Enter hours worked by employee %d ", employeeNo);
+        scanf("%f", &hoursWorked);
+
+        float normalPay = 150 * hoursWorked;
+        float overtimeHours = (hoursWorked > 40)? (hoursWorked - 40) 0;
+        overtimePayment = normalPay + (overtimeHours * 200);
+        printf("Employee Number %d\n", employeeNo);
+        printf("Over Time Payment %.2f\n", overtimePayment);
+
+        if (overtimePayment > 4000) {
+            countExceeding4000++;
+        }
+        totalEmployees++;
+        printf("\nEnter employee number (or -999 to end the program)\n");
+        scanf("%d", &employeeNo);
+    }
+
+    if (totalEmployees > 0) {
+        float percentageExceeding4000 = (float)countExceeding4000 / totalEmployees * 100;
+        printf("\nPercentage of employees whose Over Time Payment exceeds Rs. 4000 is %.2f%%\n", percentageExceeding4000);
+    } else {
+        printf("\nNo data entered.\n");
+    }
+}
+
+
+	
